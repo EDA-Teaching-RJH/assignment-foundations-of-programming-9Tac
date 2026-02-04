@@ -62,9 +62,11 @@ def run_system_monolith():
 
 ## 8) giving a range that is equal to the length of the list r 
             for rank in range(len(r)):
-                if rank == "Captain" or "Commander": 
+## 9) Changing so it calls the value that is stored at the index of the for loop and adding which list index
+                if r[rank] == "Captain" or "Commander": 
                     count = count + 1
-            print("High ranking officers: " + count) 
+                    
+            print("High ranking officers: ", count) 
             
         elif opt == "5":
             print("Shutting down.")
