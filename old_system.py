@@ -34,13 +34,16 @@ def run_system_monolith():
                 print(n[i] + " - " + r[i]) 
                 
         elif opt == "2":
-            new_name = input("Name: ")
-            new_rank = input("Rank: ")
-            new_div = input("Division: ")
+            new_name = input("Name: ").title()
+            new_rank = input("Rank: ").title()
+            new_div = input("Division: ").title()
+# 5) Insurning that it follows the same structure of naming convention in the list names 
             
            
             n.append(new_name)
-            print("Crew member added.")
+            r.append(new_rank)
+            d.append(new_div)
+            print("\n Crew member added.")
             
         elif opt == "3":
             rem = input("Name to remove: ")
