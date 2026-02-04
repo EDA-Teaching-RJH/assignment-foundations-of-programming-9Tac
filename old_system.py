@@ -13,7 +13,7 @@ def run_system_monolith():
     loading = 0
     while loading < 5:
         print("Loading module " + str(loading))
-        
+        loading= loading + 1
     
     while True:
         print("\n--- MENU ---")
@@ -24,7 +24,7 @@ def run_system_monolith():
         print("5. Exit")
         
         opt = input("Select option: ")
-        
+        ##2) validation symbol incorrect
         if opt == "1":  
             print("Current Crew List:")
             
@@ -87,5 +87,5 @@ def run_system_monolith():
             break 
             
         print("End of cycle.")
-
+##1) incomplete function as it was not closeed
 run_system_monolith()
