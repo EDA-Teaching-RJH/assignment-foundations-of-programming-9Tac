@@ -59,8 +59,9 @@ def run_system_monolith():
         elif opt == "4":
             print("Analyzing...")
             count = 0
-            
-            for rank in r:
+
+## 8) giving a range that is equal to the length of the list r 
+            for rank in range(len(r)):
                 if rank == "Captain" or "Commander": 
                     count = count + 1
             print("High ranking officers: " + count) 
@@ -94,5 +95,5 @@ def run_system_monolith():
             break 
             
         print("End of cycle.")
-##1) incomplete function as it was not closeed
+##1) incomplete function as it was not closed
 run_system_monolith()
