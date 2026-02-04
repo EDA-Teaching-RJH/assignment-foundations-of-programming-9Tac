@@ -65,7 +65,7 @@ def run_system_monolith():
 ## 9) Changing so it calls the value that is stored at the index of the for loop and adding which list index
                 if r[rank] == "Captain" or "Commander": 
                     count = count + 1
-                    
+## 10) concatination with the comma not a +
             print("High ranking officers: ", count) 
             
         elif opt == "5":
