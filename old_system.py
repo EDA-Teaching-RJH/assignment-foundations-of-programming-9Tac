@@ -41,6 +41,7 @@ def run_system_monolith():
             
            
             n.append(new_name)
+# 6) making sure that the new updated names have been added to the list 
             r.append(new_rank)
             d.append(new_div)
             print("\n Crew member added.")
