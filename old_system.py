@@ -13,6 +13,7 @@ def run_system_monolith():
     loading = 0
     while loading < 5:
         print("Loading module " + str(loading))
+        ## 3) fixing the indefinate loop by adding and increase value of 1 to loading for each loop
         loading= loading + 1
     
     while True:
@@ -27,8 +28,9 @@ def run_system_monolith():
         ##2) validation symbol incorrect
         if opt == "1":  
             print("Current Crew List:")
-            
-            for i in range(10):
+
+## 4) fixing the range od the for loop as it shoul equal the amount of values in the list
+            for i in range(len(n)):
                 print(n[i] + " - " + r[i]) 
                 
         elif opt == "2":
