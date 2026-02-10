@@ -23,9 +23,9 @@ def main():
     
     # init_database(Names, Ranks, Division, IDs)
     while True:
-        Option = int(input("Pick from the optios above what you would like to do "))
+        Option = int(input("Pick from the options above what you would like to do "))
         while Option > 8 or Option < 0:
-            Option = int(input("Pick from the optios above what you would like to do "))
+            Option = int(input("Pick from the options above what you would like to do "))
 
 ## Taking theusers input ad taking it to the right function 
         if Option == 1:
@@ -33,7 +33,7 @@ def main():
         elif Option == 2:
             Add_member(Names, Ranks, Divisions, IDs)
         elif Option == 3:
-            Remove_member()
+            Remove_member(Names, Ranks, Divisions, IDs)
         elif Option == 4:
             Update_Ranks(Names, Ranks, IDs)
         elif Option == 5:
@@ -53,7 +53,7 @@ def main():
 def Display_roster(Names, Ranks, Divisions, IDs):
     print("Current team members")
     for i in range(len(Names)):
-            print(Names[i] + " - " + Ranks[i] + " - " + Divisions[i] + " - " + IDs[i]) 
+            print(Names[i] + " - " , Ranks[i] , " - " , Divisions[i] , " - " , IDs[i]) 
     
 
 
@@ -88,11 +88,13 @@ def Update_Ranks(Names, Ranks, IDs):
         #         Ranks[idex] = new_rank
         #         print(f"Rank updated to {new_rank}")
                 # idex= int(IDs[int+1])
-        index=input("enter the ID of the officer for a rank change ")
+        index = str(input("enter the ID of the officer for a rank change "))
         for i in range(len(IDs)):
-            if i == index:
-                print(f"Updating rank for {Names[i]} (Current: {Ranks[i})")
-                New_ranks = input("Enteer the new rank ")
+            if IDs[i] == index:
+                print(f"Updating rank for {Names[i]} (Current:{Ranks[i]})")
+                New_ranks = input("Enter the new rank: ").title()
+                Ranks[i] = New_ranks
+                print(f"RAnk has been updated for {Names[i]} (Rank has been updated to {New_ranks})")
         else:
             print("Invalid ID. No such crew member.")
     except ValueError:
