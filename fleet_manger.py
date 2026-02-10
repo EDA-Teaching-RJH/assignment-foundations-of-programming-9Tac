@@ -69,6 +69,15 @@ def Add_member(Names, Ranks, Divisions, IDs):
     return Names, Ranks, Divisions, IDs
      
 
+def Remove_member(Names, Ranks, Divisions, IDs):
+    Member_removed = input("Name to remove: ").title()   
+    idex = Names.index(Member_removed)
+    Names.pop(idex)
+    Ranks.pop(idex)
+    Divisions.pop(idex)
+    print("Removed,", Member_removed)
+    return Names, Ranks, Divisions, IDs
+
 
 
 main()
