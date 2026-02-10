@@ -1,8 +1,3 @@
-Names=["Michael Burnham", "Christopher Pike", "Kathryn Janeway", "Tom Paris", "Benjamin Sisko"]
-Ranks=["Commander", "Captian", "Captain", "Lietenant", "Commander"]
-Divisions=["Science", "Command", "Command", "Helm", "Command"]
-IDs=["DS0001","DS0002","VOY001", "VOY002", "DS9003"]
-
 def main():
     ## Asking the user for their name and what th require to be done by the system
     First_name = input("What is your first name ")
@@ -46,7 +41,19 @@ def main():
         break
     else:
          print("Invalid")
+
+
     
+
+def init_databse():
+    Names=["Michael Burnham", "Christopher Pike", "Kathryn Janeway", "Tom Paris", "Benjamin Sisko"]
+    Ranks=["Commander", "Captian", "Captain", "Lietenant", "Commander"]
+    Divisions=["Science", "Command", "Command", "Helm", "Command"]
+    IDs=["DS0001","DS0002","VOY001", "VOY002", "DS9003"]
+    return Names
+    return Ranks
+    return Divisions
+    return IDs  
 
 
 main()
