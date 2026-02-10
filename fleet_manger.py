@@ -42,7 +42,10 @@ def main():
     else:
          print("Invalid")
 
-
+def Display_roster():
+    print("Current team members")
+    for i in range(len(Names)):
+                print(Names[i] + " - " + Ranks[i] + " - " + Divisions[i] + " - " + IDs[i]) 
     
 
 def init_databse():
