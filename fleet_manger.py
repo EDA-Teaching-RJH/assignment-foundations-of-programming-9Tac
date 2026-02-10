@@ -57,6 +57,18 @@ def Display_roster(Names, Ranks, Divisions, IDs):
     
 
 
+def Add_member(Names, Ranks, Divisions, IDs):
+    Add_Name = str(input("What is the new Members name ")).title()
+    Add_Rank = str(input("What is their Rank ")).title()
+    Add_Division = str(input("what division are they in "))
+    Add_IDs = str(input("what is there ID code"))
+    Names.append(Add_Name)
+    Ranks.append(Add_Rank)
+    Divisions.append(Add_Division)
+    IDs.append(Add_IDs)
+    return Names, Ranks, Divisions, IDs
+     
+
 
 
 main()
