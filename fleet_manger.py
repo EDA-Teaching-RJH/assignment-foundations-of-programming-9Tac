@@ -78,6 +78,25 @@ def Remove_member(Names, Ranks, Divisions, IDs):
     print("Removed,", Member_removed)
     return Names, Ranks, Divisions, IDs
 
-
+def Update_Ranks(Names, Ranks, IDs):
+    try:
+        # for i in len(IDs):
+        #     idex = int(IDs[i])
+        #     if 0 <= idex < len(Names):
+        #         print(f"Updating rank for {Names[idex]} (Current: {Ranks[idex]})")
+        #         new_rank = input("Enter new rank: ").title()
+        #         Ranks[idex] = new_rank
+        #         print(f"Rank updated to {new_rank}")
+                # idex= int(IDs[int+1])
+        index=input("enter the ID of the officer for a rank change ")
+        for i in range(len(IDs)):
+            if i == index:
+                print(f"Updating rank for {Names[i]} (Current: {Ranks[i})")
+                New_ranks = input("Enteer the new rank ")
+        else:
+            print("Invalid ID. No such crew member.")
+    except ValueError:
+        print("Invalid input. Please enter a numeric ID.")
+    return Names, Ranks, IDs
 
 main()
