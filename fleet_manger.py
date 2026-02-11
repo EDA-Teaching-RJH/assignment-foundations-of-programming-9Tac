@@ -37,7 +37,7 @@ def main():
         elif Option == 4:
             Update_Ranks(Names, Ranks, IDs)
         elif Option == 5:
-            Search_Crew()
+            Search_Crew(Names, Ranks, Divisions, IDs)
         elif Option == 6:
             Filter_by_division()
         elif Option == 7:
@@ -94,7 +94,7 @@ def Update_Ranks(Names, Ranks, IDs):
                 print(f"Updating rank for {Names[i]} (Current:{Ranks[i]})")
                 New_ranks = input("Enter the new rank: ").title()
                 Ranks[i] = New_ranks
-                print(f"RAnk has been updated for {Names[i]} (Rank has been updated to {New_ranks})")
+                print(f"Rank has been updated for {Names[i]} (Rank has been updated to {New_ranks})")
         else:
             print("Invalid ID. No such crew member.")
     except ValueError:
@@ -102,7 +102,39 @@ def Update_Ranks(Names, Ranks, IDs):
     return Names, Ranks, IDs
 
 def Search_Crew(Names, Ranks, Divisions, IDs):
-    
+    print("What are you searching for \n 1) The Names of the crew members \n 2) The Ranks and the amount of people with that rank \n 3) The divisions in the crew  4)IDs in the crew")
+    options = int(input("Which would you like to carry out in this protocal"))
+    if options == 1:
+        print("Names of the crew members ")
+        N0 = 1
+        for i in range(len(Names)):
+            print(N0, "Crew member: " ,Names[i])
+            N0 = N0 + 1
+    elif options == 2:
+        print("The ranks of the crew ")
+        select = int(input(" 1) Finding the ranks \n 2. Finding the amount of people with those ranks"))
+        if select == 1:
+            print("THe Ranks of the in the crew  \n Captian \n Commander \n Lieutenant Commander \n Lieutenant \n ")
+            rank_selection = input("which rank")
+            for i in range(len(Ranks)):
+                if rank_selection == Ranks[i]:
+                    print(Names[i], "-", Ranks[i] )
+                else:
+                    break  
+        elif options == 2: 
+            try:
+                
+                for rank in range(len(Ranks)):
+                    count = 0
+                    if Ranks[rank] == rank_selection: 
+                        count = count + 1
 
-    
-main()
+                        print("The rank of ", rank_selection, "has ", count, "members")    
+            except:
+                print("Rank is not shown ")
+        else:
+            print("Not an option")
+
+
+
+main()         
