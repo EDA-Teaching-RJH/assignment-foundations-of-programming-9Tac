@@ -37,7 +37,7 @@ def main():
         elif Option == 4:
             Update_Ranks(Names, Ranks, IDs)
         elif Option == 5:
-            Search_Crew
+            Search_Crew()
         elif Option == 6:
             Filter_by_division()
         elif Option == 7:
@@ -101,4 +101,8 @@ def Update_Ranks(Names, Ranks, IDs):
         print("Invalid input. Please enter a numeric ID.")
     return Names, Ranks, IDs
 
+def Search_Crew(Names, Ranks, Divisions, IDs):
+    
+
+    
 main()
