@@ -23,9 +23,20 @@ def main():
     
     # init_database(Names, Ranks, Division, IDs)
     while True:
+        print("Welcome", First_name + last_name, 
+          "\n 1. Check curent memebrs" 
+          "\n 2. Add a member" 
+          "\n 3. Remove a member " 
+          "\n 4. Update the Ranks " 
+          "\n 5. Search Crew" 
+          "\n 6. Filter by divisions " 
+          "\n 7. Calculate payroll" 
+          "\n 8. Count officers Ranks ")
+    
         Option = int(input("Pick from the options above what you would like to do "))
         while Option > 8 or Option < 0:
             Option = int(input("Pick from the options above what you would like to do "))
+
 
 ## Taking theusers input ad taking it to the right function 
         if Option == 1:
@@ -101,8 +112,8 @@ def Update_Ranks(Names, Ranks, IDs):
         print("Invalid input. Please enter a numeric ID.")
     return Names, Ranks, IDs
 
-def Search_Crew(Names, Ranks, Divisions, IDs):
-    print("What are you searching for \n 1) The Names of the crew members \n 2) The Ranks and the amount of people with that rank \n 3) The divisions in the crew  4)IDs in the crew")
+def Search_Crew(Names, Ranks, Divisions ):
+    print("What are you searching for \n 1) The Names of the crew members \n 2) The Ranks and the amount of people with that rank \n 3) The divisions in the crew  ")
     options = int(input("Which would you like to carry out in this protocal"))
     if options == 1:
         print("Names of the crew members ")
@@ -112,26 +123,37 @@ def Search_Crew(Names, Ranks, Divisions, IDs):
             N0 = N0 + 1
     elif options == 2:
         print("The ranks of the crew ")
-        select = int(input(" 1) Finding the ranks \n 2. Finding the amount of people with those ranks"))
+        select = int(input(" 1) Finding the ranks \n 2. Finding the amount of people with those ranks "))
         if select == 1:
             print("THe Ranks of the in the crew  \n Captian \n Commander \n Lieutenant Commander \n Lieutenant \n ")
-            rank_selection = input("which rank")
+            rank_selection = input("which rank: ").title()
             for i in range(len(Ranks)):
                 if rank_selection == Ranks[i]:
                     print(Names[i], "-", Ranks[i] )
                 else:
                     break  
+
         elif options == 2: 
             try:
-                
+                rrank_selection = input("which rank: ").title()
                 for rank in range(len(Ranks)):
                     count = 0
-                    if Ranks[rank] == rank_selection: 
+                    if Ranks[rank] == rrank_selection: 
                         count = count + 1
 
-                        print("The rank of ", rank_selection, "has ", count, "members")    
+                        print("The rank of ", rrank_selection, "has ", count, "members")    
             except:
                 print("Rank is not shown ")
+        
+        elif options == 3:
+            print("Which division")
+            Division_selection = input("which division: ").title()
+            for div in range(len(Divisions)):
+                if rank_selection == Ranks[div]:
+                    print(Names[div], "-", Divisions[div] )
+                else:
+                    break
+            
         else:
             print("Not an option")
 
