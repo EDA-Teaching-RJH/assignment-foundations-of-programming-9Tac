@@ -1,10 +1,9 @@
-Names=["Michael Burnham", "Christopher Pike", "Kathryn Janeway", "Tom Paris", "Benjamin Sisko"]
-Ranks=["Commander", "Captian", "Captain", "Lietenant", "Commander"]
-Divisions=["Science", "Command", "Command", "Helm", "Command"]
-IDs=["0001","0002","0003", "0004", "0005"]
+Names = ["Michael Burnham", "Christopher Pike", "Kathryn Janeway", "Tom Paris", "Benjamin Sisko"]
+Ranks = ["Commander", "Captian", "Captain", "Lietenant", "Commander"]
+Divisions = ["Science", "Command", "Command", "Helm", "Command"]
+IDs = ["0001","0002","0003", "0004", "0005"]
     
 def main():
-    
     ## Asking the user for their name and what th require to be done by the system
     First_name = input("What is your first name ")
     last_name = input("What is your last name")
@@ -50,9 +49,9 @@ def main():
         elif Option == 5:
             Search_Crew(Names, Ranks, Divisions, IDs)
         elif Option == 6:
-            Filter_by_division()
+            Filter_by_division(Names, Divisions)
         elif Option == 7:
-            Calculate_payroll()
+            Calculate_payroll(Ranks)
         elif Option == 8:
             Count_officers()
         else:
@@ -112,7 +111,7 @@ def Update_Ranks(Names, Ranks, IDs):
         print("Invalid input. Please enter a numeric ID.")
     return Names, Ranks, IDs
 
-def Search_Crew(Names, Ranks, Divisions ):
+def Search_Crew(Names, Ranks):
     print("What are you searching for \n 1) The Names of the crew members \n 2) The Ranks and the amount of people with that rank \n 3) The divisions in the crew  ")
     options = int(input("Which would you like to carry out in this protocal"))
     if options == 1:
@@ -145,18 +144,21 @@ def Search_Crew(Names, Ranks, Divisions ):
             except:
                 print("Rank is not shown ")
         
-        elif options == 3:
-            print("Which division")
-            Division_selection = input("which division: ").title()
-            for div in range(len(Divisions)):
-                if rank_selection == Ranks[div]:
-                    print(Names[div], "-", Divisions[div] )
-                else:
-                    break
-            
+        
         else:
             print("Not an option")
 
+def Filter_by_division(Names, Divisions):
+
+    Division_selection = input("Which division: ").title()
+    for div in range(len(Divisions)):
+        if Division_selection == Divisions[div]:
+            print(Names[div], "-", Divisions[div] )
+        else:
+            print("enter")
+            break
+            
 
 
-main()         
+
+main()
