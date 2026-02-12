@@ -53,7 +53,7 @@ def main():
         elif Option == 7:
             Calculate_payroll(Ranks)
         elif Option == 8:
-            Count_officers()
+            Count_officers(Ranks)
         else:
             print("Shutting down")
 
@@ -106,9 +106,9 @@ def Update_Ranks(Names, Ranks, IDs):
                 Ranks[i] = New_ranks
                 print(f"Rank has been updated for {Names[i]} (Rank has been updated to {New_ranks})")
         else:
-            print("Invalid ID. No such crew member.")
+            print("Changed")
     except ValueError:
-        print("Invalid input. Please enter a numeric ID.")
+        print("Change Rank")
     return Names, Ranks, IDs
 
 def Search_Crew(Names, Ranks):
@@ -162,7 +162,7 @@ def Filter_by_division(Names, Divisions):
 def Calculate_payroll(Ranks):
     try:
         cost = 0
-        for i in range(len(Ranks)):
+        for i in len(Ranks):
             
             if Ranks[i] == "Captain":
                 p_Captain = 1000
@@ -191,7 +191,35 @@ def Calculate_payroll(Ranks):
     except:
         print("insuffcient fund")
 
-def Count_officers():
+def Count_officers(Ranks):
+     
+    count_Captain = 0
+    count_Commander = 0
+    count_Lieutenant = 0
+    count_Lieutenant_Commander = 0
+    count_Esign = 0
+     
+    for i in range(len(Ranks)):
+            
+        if Ranks[i] == "Captain":
+            count_Captain = count_Captain + 1
+
+        elif Ranks[i] == "Commander":
+            count_Commander = count_Commander + 1
+            
+        elif Ranks[i] == "Lieutenant Commander":
+            count_Lieutenant_Commander = count_Lieutenant_Commander + 1
+
+        elif Ranks[i] == "Lieutenant":
+            count_Lieutenant = count_Lieutenant + 1
+        elif Ranks[i] == "Esign":
+            count_Esign = count_Esign + 1
+
+        else:
+            break 
+        print("The amount of Captains:", count_Captain, "\nThe amount of Commanders:", count_Commander, "\nThe amount of Lieutenant Commanders:", count_Lieutenant_Commander, "\nThe amount of lieutenants:", count_Lieutenant, "\nThe amount of Esigns:",count_Esign )
+
+
 
 
 main()
