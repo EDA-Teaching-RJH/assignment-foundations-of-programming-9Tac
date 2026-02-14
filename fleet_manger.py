@@ -68,14 +68,28 @@ def Display_roster(Names, Ranks, Divisions, IDs):
 
 
 def Add_member(Names, Ranks, Divisions, IDs):
-    Add_Name = str(input("What is the new Members name ")).title()
-    Add_Rank = str(input("What is their Rank ")).title()
-    Add_Division = str(input("what division are they in "))
-    Add_IDs = str(input("what is there ID code"))
+    tng_rank = ["Captain", "Lieutenant Commander", "Lieutenant", "Esign"]
+    Add_Name = input("What is the new Members name ").title()
+    Add_Rank = input("What is their Rank ").title()
+    Add_Division = input("what division are they in ").title()
+    Add_IDs = input("what is there ID code")
     Names.append(Add_Name)
-    Ranks.append(Add_Rank)
     Divisions.append(Add_Division)
-    IDs.append(Add_IDs)
+    r=0
+    while tng_rank[r] != Add_Rank:
+        print("invaild rank")
+        Add_Rank = str(input("What is their Rank ")).title()
+        r=r+1
+    else:
+        
+         Ranks.append(Add_Rank)
+        
+    
+    if IDs[i] == Add_IDs:
+        print("ID taken try again")
+        
+    else:
+        IDs.append(Add_IDs)
     return Names, Ranks, Divisions, IDs
      
 
