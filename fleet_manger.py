@@ -84,9 +84,10 @@ def Add_member(Names, Ranks, Divisions, IDs):
         
          Ranks.append(Add_Rank)
         
-    
+    i=0
     if IDs[i] == Add_IDs:
         print("ID taken try again")
+        i=i+1
         
     else:
         IDs.append(Add_IDs)
