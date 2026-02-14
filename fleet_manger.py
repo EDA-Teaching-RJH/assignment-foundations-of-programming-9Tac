@@ -220,6 +220,4 @@ def Count_officers(Ranks):
         print("The amount of Captains:", count_Captain, "\nThe amount of Commanders:", count_Commander, "\nThe amount of Lieutenant Commanders:", count_Lieutenant_Commander, "\nThe amount of lieutenants:", count_Lieutenant, "\nThe amount of Esigns:",count_Esign )
 
 
-
-
 main()
