@@ -76,12 +76,11 @@ def Add_member(Names, Ranks, Divisions, IDs):
     Names.append(Add_Name)
     Divisions.append(Add_Division)
     r=0
-    while tng_rank[r] != Add_Rank:
+    if tng_rank[r] != Add_Rank:
         print("invaild rank")
         Add_Rank = str(input("What is their Rank ")).title()
         r=r+1
     else:
-        
          Ranks.append(Add_Rank)
         
     i=0
