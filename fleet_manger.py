@@ -2,20 +2,12 @@ Names = ["Michael Burnham", "Christopher Pike", "Kathryn Janeway", "Tom Paris", 
 Ranks = ["Commander", "Captian", "Captain", "Lietenant", "Commander"]
 Divisions = ["Science", "Command", "Command", "Helm", "Command"]
 IDs = ["0001","0002","0003", "0004", "0005"]
-    
+   
+
 def main():
     ## Asking the user for their name and what th require to be done by the system
     First_name = input("What is your first name ")
     last_name = input("What is your last name")
-    print("Welcome", First_name + last_name, 
-          "\n 1. Check curent memebrs" 
-          "\n 2. Add a member" 
-          "\n 3. Remove a member " 
-          "\n 4. Update the Ranks " 
-          "\n 5. Search Crew" 
-          "\n 6. Filter by divisions " 
-          "\n 7. Calculate payroll" 
-          "\n 8. Count officers Ranks ")
     
 ## User validation 
     
@@ -59,7 +51,7 @@ def main():
 
             break
         
-
+    
 def Display_roster(Names, Ranks, Divisions, IDs):
     print("Current team members")
     for i in range(len(Names)):
@@ -68,28 +60,32 @@ def Display_roster(Names, Ranks, Divisions, IDs):
 
 
 def Add_member(Names, Ranks, Divisions, IDs):
-    tng_rank = ["Captain", "Lieutenant Commander", "Lieutenant", "Esign"]
+    #TNG_Ranks = ["Captain", "Commander", "Lieutenant Commander", "Lieutenant", "Esign"]
     Add_Name = input("What is the new Members name ").title()
     Add_Rank = input("What is their Rank ").title()
     Add_Division = input("what division are they in ").title()
     Add_IDs = input("what is there ID code")
     Names.append(Add_Name)
     Divisions.append(Add_Division)
-    r=0
-    if tng_rank[r] != Add_Rank:
-        print("invaild rank")
-        Add_Rank = str(input("What is their Rank ")).title()
-        r=r+1
-    else:
-         Ranks.append(Add_Rank)
+    # for i in range(len(TNG_Ranks)):
+    #     count = 0
+    #     if TNG_Ranks[i] != Add_Rank:
+    #         count = count + 1
+    #     Add_Rank = input("Rank is invaild re-enter \nWhat is their Rank ").title()
+    # print("User Rank is valid")
         
-    i=0
-    if IDs[i] == Add_IDs:
-        print("ID taken try again")
-        i=i+1
         
-    else:
-        IDs.append(Add_IDs)
+    Ranks.append(Add_Rank)
+
+    for i in range(len(IDs)):
+        if IDs[i] != Add_IDs:
+            print("Valid ID ") 
+        else: 
+            Add_IDs = input("ID not valid what is there ID code")
+    IDs.append(Add_IDs)
+        
+    
+
     return Names, Ranks, Divisions, IDs
      
 
@@ -125,9 +121,9 @@ def Update_Ranks(Names, Ranks, IDs):
         print("Change Rank")
     return Names, Ranks, IDs
 
-def Search_Crew(Names, Ranks):
-    print("What are you searching for \n 1) The Names of the crew members \n 2) The Ranks and the amount of people with that rank \n 3) The divisions in the crew  ")
-    options = int(input("Which would you like to carry out in this protocal"))
+def Search_Crew(Names, Ranks, Divisions, IDs):
+    print("What are you searching for \n 1) The Names of the crew members \n 2) The Ranks and the amount of people with that rank \n 3) The divisions in the crew \n 4) Finding the user with ID code ")
+    options = int(input("Which would you like to carry out in this protocal "))
     if options == 1:
         print("Names of the crew members ")
         N0 = 1
@@ -144,7 +140,8 @@ def Search_Crew(Names, Ranks):
                 if rank_selection == Ranks[i]:
                     print(Names[i], "-", Ranks[i] )
                 else:
-                    break  
+                    print("No users found in the Rank")
+        
 
         elif options == 2: 
             try:
@@ -154,13 +151,32 @@ def Search_Crew(Names, Ranks):
                     if Ranks[rank] == rrank_selection: 
                         count = count + 1
 
-                        print("The rank of ", rrank_selection, "has ", count, "members")    
+                print("The rank of ", rrank_selection, "has ", count, "members")    
             except:
                 print("Rank is not shown ")
-        
-        
+
         else:
-            print("Not an option")
+            print("Not a select option")
+        
+    elif options == 3:
+        Division = input("Which division").title()
+        N0  = 0
+        for i in range(len(Divisions)):
+            if Divisions[i] == Division:
+                N0 = N0 + 1
+        print(N0, "members in ", Division)
+
+
+    elif options == 4:
+        id = input("Enter ID code")
+        for i in range(len(IDs)):
+            
+            if id == IDs[i]:
+                print(id,"the id belongs to:", Names[i])
+            else: 
+                print("No user has ID:", id)
+    else:
+        print("Not an option")
 
 def Filter_by_division(Names, Divisions):
 
